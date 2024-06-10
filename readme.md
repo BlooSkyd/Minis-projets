@@ -10,12 +10,12 @@ L'affichage de retour est à déterminer, soit avec des caractères spéciaux (?
 Nous pourrions avoir une évolution avec un système de vie.
 
 Exemple :
-Mot à trouver : `bateaux`
-Affichage : `??????`
-Saisie : `palmier`
-Réponse : `-a---?-` (affichage relatif à la saisie)
-Saisie : `tambour`
-Réponse : `?a-?-u-` (affichage relatif à la saisie)
+- Mot à trouver : `bateaux`
+- Affichage : `??????`
+- Saisie : `palmier`
+- Réponse : `-a---?-` (affichage relatif à la saisie)
+- Saisie : `tambour`
+- Réponse : `?a-?-u-` (affichage relatif à la saisie)
 
 
 ## 2. Calculatrice
@@ -24,18 +24,18 @@ Le but est de pouvoir saisir des opérations plus ou moins simples et d'obtenir 
 Pour cela, il faudra analyser les données passées en entrées et les décomposer en opération ou expression.
 
 Exemples :
-Saisie : `5-2`
-Réponse : `3`
-Saisie : `3*3+6/2`
-Réponse : `12`
+- Saisie : `5-2`
+- Réponse : `3`
+- Saisie : `3*3+6/2`
+- Réponse : `12`
 
 Pour cela, je propose de "simplement" décomposer chaque opérations en *expressions* :
-- e --> n (valeur)
-- e + e --> (expression)
-- e - e --> (expression)
-- e * e --> (expression)
-- e / e --> (expression)
-- e % e --> (expression)
-- ( e ) --> (expression)
+1. e --> n (valeur)
+2. e + e --> (expression)
+3. e - e --> (expression)
+4. e * e --> (expression)
+5. e / e --> (expression)
+6. e % e --> (expression)
+7. ( e ) --> (expression)
 
 ## 3. Discord / Site web hébergé
