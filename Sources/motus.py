@@ -4,7 +4,7 @@ import random
 
 liste_mots = ["bateaux", "navires", "catamaran"]
 
-mot_selectionne = liste_mots[random.randint(0,2)]
+mot_selectionne = random.choice(liste_mots)
 
 mot_init = ""
 for _ in range(len(mot_selectionne)):
