@@ -8,7 +8,7 @@ mot_selectionne = random.choice(liste_mots)
 
 mot_init = ""
 for _ in range(len(mot_selectionne)):
-    mot_init += "?"
+    mot_init += "-"
 
 print("Début de la partie :")
 print("Mot à trouver : "+mot_init+" ("+str(len(mot_init))+")")
