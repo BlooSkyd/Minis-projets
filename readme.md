@@ -2,13 +2,14 @@
 
 Pour l'ensemble des projets, nous pourront utiliser Python ou JavaScript comme langage de programmation.
 
-## Conjecture de Syracuse
+> Chaque projet avec un 📄 possède un code source/exemple d'implémentation disponible à l'adresse [https://github.com/BlooSkyd/Minis-projets](https://github.com/BlooSkyd/Minis-projets)
 
+## Conjecture de Syracuse 📄
 Il s'agit d'une fonction très simple, qui permet de retomber toujours sur le même résultat :
 
 ```
-Fonction: Syracuse
-Paramètre: n
+Fonction:   Syracuse
+Paramètre:  n
 Retour:     Si n pair : n/2
             Sinon : 3*n + 1
 Fin: Dès que le résultat vaut 1
@@ -16,8 +17,28 @@ Fin: Dès que le résultat vaut 1
 
 Créer un code qui demande à l'utilisateur le nombre qu'il souhaite et affiche chaque étape de la fonction syracuse jusqu'à ce que le résultat vale 1.
 
+⚠ Attention à bien prendre en compte la condition d'arrêt.
 
-## Code César
+## Jeu du motus 📄
+
+L'idée est de faire un petit programme qui choisi un mot, et nous l'affiche de manière *"sensurée"*.
+L'utilisateur devra donc saisir des mots comme tentatives, et les lettres communes seront affichées.
+L'affichage de retour est à déterminer, soit avec des caractères spéciaux (?,#,€, etc) ou bien via des couleurs de manière plus proche du jeu existant.
+Nous pourrions avoir une évolution avec un système de vie.
+
+Exemple :
+- Mot à trouver : `bateaux`
+- Affichage : `------`
+- Saisie : `palmier`
+- Réponse : `-a---?-` (affichage relatif à la saisie)
+- Saisie : `tambour`
+- Réponse : `?a-?-u-` (affichage relatif à la saisie)
+
+1. Réaliser le programme pour gérer un cas d'usage
+2. Améliorer le programme pour avoir un système de vie
+3. Améliorer le programme pour avoir une liste générée aléatoirement / même pas connue du développeur (bibliothèque tel que Faker?), et donner un résumé de la saisie (nombre de lettres bien placées, mal placées, etc)
+
+## Code César 📄
 
 Connaître le code césar, c'est mettre un pied dans l'univers du cryptage et de la cybersécurité (un tout petit pas, mais un pas quand même)
 
@@ -38,29 +59,8 @@ On peut aborder le projet de manière croissante :
     - Réalisons une fonction qui prend une chaine de caractère et renvoie le message déterminé comme étant le plus probable d'être le bon
     - Réalisons une fonction qui prendre une chaine de caractère et une valeur de décalage, et qui renvoie le message converti avec le décalage fourni ET le message le plus probable
 
-## Jeu du motus
 
-L'idée est de faire un petit programme qui choisi un mot, et nous l'affiche de manière *"sensurée"*.
-L'utilisateur devra donc saisir des mots comme tentatives, et les lettres communes seront affichées.
-L'affichage de retour est à déterminer, soit avec des caractères spéciaux (?,#,€, etc) ou bien via des couleurs de manière plus proche du jeu existant.
-Nous pourrions avoir une évolution avec un système de vie.
-
-Exemple :
-- Mot à trouver : `bateaux`
-- Affichage : `??????`
-- Saisie : `palmier`
-- Réponse : `-a---?-` (affichage relatif à la saisie)
-- Saisie : `tambour`
-- Réponse : `?a-?-u-` (affichage relatif à la saisie)
-
-1. Réaliser le programme pour gérer un cas d'usage
-2. Améliorer le programme pour avoir un système de vie
-3. Améliorer le programme pour avoir une liste générée aléatoirement / même pas connue du développeur (bibliothèque tel que Faker?)
-
-## Jeu du morpion
-Exemple améliorable [ici](https://www.commentcoder.com/projets-python-debutants/#6-le-jeu-du-pendu)
-
-## Jeu du pendu
+## Jeu du pendu 📄
 Qui ne connait pas le jeu du pendu ?
 Au cas, petite présentation : un mot censuré et il faut le retrouver.
 Pour cela, les joueurs proposent des lettres une a une.
@@ -90,6 +90,34 @@ Décomposé étape par étape, nous pouvons :
 3. Créer une fonction qui affiche l'état du dessin et le fait évoluer en cas d'erreur
 4. Gérer l'ensemble du code pour que le jeu fonctionne du début à la fin
 
+Idem, nous pourrons améliorer le projet en l'agrémentant d'une liste générée aléatoirement.
+
+## Jeu du morpion 📄
+
+Pour créer un morpion assez facilement, il faut commencer par le plateau : un tableau à une dimension de 9 cellules.
+
+Nous pouvons faire une fonction d'affichage légèrement stylisée afin d'avoir un plateau de 3 cases de haut sur 3 cases de large.
+
+Ensuite, il nous suffira de demander au joueur d'indiquer dans quelle case il souhaite jouer, la gestion du caractère se fera par la suite.
+
+> ⚠ Attention à la conversion entre la valeur de la case côté humain vs. côté machine, mais aussi à ce que la case ne soit pas déjà utilisée.
+
+Si ces conditions sont bonnes, on sauvegarde le coup, on vérifie qu'il n'y a pas de victoire et qu'il ne s'agisse pas d'une égalité (9 coups max).
+> Question : y'a t-il un ordre à privilégier dans la réalisation des tests ?
+
+Si jamais il n'y a ni victoire, ni égalité, on change de joueur et on recommence.
+
+On pourra par la suite réfléchir à la possibilité de jouer contre la machine, qui jouera d'abord de manière aléatoire et par la suite pourquoi pas se documenter sur quels sont les meilleurs coups à jouer en fonction de la situation.
+
+
+
+
+
+## Jeu du black jack
+
+## Tour de hanoi
+
+## Jeu des piles (à trier)
 
 ## Algorithmes de tri
 
@@ -111,10 +139,6 @@ Répéter jusqu'à la carte la plus à droite, et c'est fini !
 
 ### Tri (par) fusion : ⭐⭐⭐
 C'est l'application du célèbre "diviser pour mieux reigner"
-
-
-## Jeu du black jack
-
 
 ## Calculatrice
 
