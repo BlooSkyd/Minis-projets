@@ -110,16 +110,36 @@ Si jamais il n'y a ni victoire, ni égalité, on change de joueur et on recommen
 On pourra par la suite réfléchir à la possibilité de jouer contre la machine, qui jouera d'abord de manière aléatoire et par la suite pourquoi pas se documenter sur quels sont les meilleurs coups à jouer en fonction de la situation.
 
 
-
-
-
 ## Jeu du black jack
 
-## Tour de hanoi
+Parmis les jeux de carte de paris (on ne fait pas la promotion du paris, jouer comporte des risqutes, blabla bla, etc.), le jeu du black jack est l'un des plus simples à concevoir.
 
-## Jeu des piles (à trier)
+Pour le présenter rapidement, il consiste en une partie opposant le croupier (le représentant du casino) aussi appeler la banque, et les différents joueurs. Dans notre cas, nous jouerons en 1 contre 1 et le croupier sera un simple automate. Nous ne nous occuperons pas de la partie de mises (paris) et nous nous concentrerons uniquement sur la partie tirage et du jeu en tant que tel.
+
+> Le but est de battre le croupier sans dépasser le score de 21. Dès qu'un joueur ait plus que 21, on dit qu'il « brûle » et il perd sa mise initiale. [Wikipédia](https://fr.wikipedia.org/wiki/Blackjack_(jeu))
+
+La valeur des cartes sont les suivantes :
+- de 2 à 9 : valeur nominale de la carte ;
+- de 10 au roi (surnommées « bûche ») : 10 points ;
+- as : 1 ou 11 points (au choix du joueur).
+
+Un blackjack est la situation où le joueur reçoit, dès le début du jeu, un as et une bûche. Si le joueur atteint 21 points avec plus de deux cartes, on compte 21 points et non blackjack.
+
+### Réalisation
+1. Construire les données nécessaires pour les cartes (réflexion à faire sur le type de données à utiliser)
+2. Créer une fonction qui permet de piocher une carte et la renvoie
+3. Gérer l'inventaire du joueur et du croupier
+4. Initialiser la partie
+5. Créer le code nécessaire pour gérer les intéractions avec les joueurs
+6. Créer l'algorithme pour gérer le croupier
+7. Gérer victoire et défaite
+
 
 ## Algorithmes de tri
+
+Pour l'ensemble des algorithmes produits, il sera plus facile de les réaliser en ayant une compréhension visuelle de leur fonctionnement. Nous vous invitons à consulter leurs pages Wikipédia respectives.
+
+Un résultat de fonctionnement visuel étape par étape est attendu.
 
 ### Tri à bulle : ⭐
 Il s'agit d'un mode de tri très imagé : imaginons que nos éléments soit dans un verre d'eau, et qu'ils sont tous rattachés à une bulle.
@@ -138,7 +158,35 @@ Répéter jusqu'à la carte la plus à droite, et c'est fini !
 
 
 ### Tri (par) fusion : ⭐⭐⭐
-C'est l'application du célèbre "diviser pour mieux reigner"
+C'est l'application du célèbre "diviser pour mieux reigner". À partir de deux listes triées, on peut facilement construire une liste triée comportant les éléments issus de ces deux listes (leur fusion).
+
+Le principe de l'algorithme de tri fusion repose sur cette observation : le plus petit élément de la liste à construire est soit le plus petit élément de la première liste, soit le plus petit élément de la deuxième liste. Ainsi, on peut construire la liste élément par élément en retirant tantôt le premier élément de la première liste, tantôt le premier élément de la deuxième liste (en fait, le plus petit des deux, à supposer qu'aucune des deux listes ne soit vide, sinon la réponse est immédiate).
+
+L'algorithme est naturellement décrit de façon **récursive** :
+1. Si le tableau n'a qu'un élément, il est déjà trié.
+2. Sinon, séparer le tableau en deux parties à peu près égales.
+3. Trier récursivement les deux parties avec l'algorithme du tri fusion.
+4. Fusionner les deux tableaux triés en un seul tableau trié.
+
+
+## Tours de Hanoï
+
+Les tours de Hanoï sont un vieux problème/jeu de réflexion mathématique. Il consiste à déplacer des disques de diamètres différents d'une tour de « départ » à une tour d'« arrivée » en passant par une tour « intermédiaire », et ceci en un minimum de coups, tout en respectant les règles suivantes :
+1. on ne peut déplacer plus d'un disque à la fois ;
+2. on ne peut placer un disque que sur un autre disque plus grand que lui ou sur un emplacement vide.
+
+On suppose que cette dernière règle est également respectée dans la configuration de départ.
+
+Pour ce programme, assurez-vous de comprendre le fonctionnement des structures FIFO et LIFO.
+
+Réalisez le code nécessaire pour pouvoir réussir ce problème mathématique, d'abord avec 4 disques pour tester, puis 8 une fois que le code fonctionne. Conseils d'organisation :
+1. Utiliser 3 listes avec pour chaque disque un entier de 1 à 8 ;
+2. Créer une fonction qui affiche les 3 tours côte à côte ;
+3. Créer une fonction qui prend en paramètre le numéro de la tour A, dans laquelle nous prendrons le disque et que nous poserons sur la tour B. Attention aux conditions de faisabilité ;
+4. Intégrer cette fonction dans un algorithme demandant à l'utilisateur de saisir ces choix ;
+5. Gérer les coups impossibles/victoires ;
+
+## Jeu des piles (à trier)
 
 ## Calculatrice
 

@@ -72,7 +72,7 @@ def ajouter_lettre(lettre: str):
     if lettre not in lettres_trouvees:
         lettres_trouvees.append(lettre)
 
-def devoiler(mot: str, progression: str, lettre: str):
+def devoiler(mot: str, avancee: str, lettre: str):
     global nb_erreur
     
     ajouter_lettre(lettre)
@@ -80,12 +80,12 @@ def devoiler(mot: str, progression: str, lettre: str):
     if mot.count(lettre) == 0 :
         print("Lettre absente")
         nb_erreur += 1
-        return progression
+        return avancee
     
     
     resultat = ""
     for index in range(len(mot)):
-        if progression[index] != "-":
+        if avancee[index] != "-":
             resultat += mot[index]
         elif mot[index] == lettre:
             resultat += lettre
@@ -114,8 +114,10 @@ def jouer():
     global nb_erreur
 
     liste_mots = ["bateaux", "navires", "catamaran","toboguant"]
+
     mot_selectionne = random.choice(liste_mots)
     progression = initialiser_mot(mot_selectionne)
+    progression = devoiler(mot_selectionne, progression, mot_selectionne[0])
 
     
     while True:
