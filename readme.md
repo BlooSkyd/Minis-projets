@@ -1,8 +1,8 @@
 # Minis projets
 
-Pour l'ensemble des projets, nous pourront utiliser Python ou JavaScript comme langage de programmation.
+Pour l'ensemble des projets, nous pourront utiliser n'importe quel langage de programmation.
 
-> Chaque projet avec un 📄 possède un code source/exemple d'implémentation disponible à l'adresse [https://github.com/BlooSkyd/Minis-projets](https://github.com/BlooSkyd/Minis-projets)
+> Chaque projet avec un 📄 possède un code d'exemple d'implémentation basique en **python** est disponible à l'adresse [https://github.com/BlooSkyd/Minis-projets](https://github.com/BlooSkyd/Minis-projets)
 
 ## Conjecture de Syracuse 📄
 Il s'agit d'une fonction très simple, qui permet de retomber toujours sur le même résultat :
@@ -37,6 +37,7 @@ Exemple :
 1. Réaliser le programme pour gérer un cas d'usage
 2. Améliorer le programme pour avoir un système de vie
 3. Améliorer le programme pour avoir une liste générée aléatoirement / même pas connue du développeur (bibliothèque tel que Faker?), et donner un résumé de la saisie (nombre de lettres bien placées, mal placées, etc)
+<br>
 
 ## Code César 📄
 
@@ -58,7 +59,6 @@ On peut aborder le projet de manière croissante :
     - Réalisons une fonction qui détermine l'écart dans l'alphabet entre deux caractère (a => a = 0, a => e = 4, e => a = -4)
     - Réalisons une fonction qui prend une chaine de caractère et renvoie le message déterminé comme étant le plus probable d'être le bon
     - Réalisons une fonction qui prendre une chaine de caractère et une valeur de décalage, et qui renvoie le message converti avec le décalage fourni ET le message le plus probable
-
 
 ## Jeu du pendu 📄
 Qui ne connait pas le jeu du pendu ?
@@ -108,9 +108,9 @@ Si ces conditions sont bonnes, on sauvegarde le coup, on vérifie qu'il n'y a pa
 Si jamais il n'y a ni victoire, ni égalité, on change de joueur et on recommence.
 
 On pourra par la suite réfléchir à la possibilité de jouer contre la machine, qui jouera d'abord de manière aléatoire et par la suite pourquoi pas se documenter sur quels sont les meilleurs coups à jouer en fonction de la situation.
+<br>
 
-
-## Jeu du black jack
+## Jeu du black jack 📄
 
 Parmis les jeux de carte de paris (on ne fait pas la promotion du paris, jouer comporte des risqutes, blabla bla, etc.), le jeu du black jack est l'un des plus simples à concevoir.
 
@@ -168,8 +168,7 @@ L'algorithme est naturellement décrit de façon **récursive** :
 3. Trier récursivement les deux parties avec l'algorithme du tri fusion.
 4. Fusionner les deux tableaux triés en un seul tableau trié.
 
-
-## Tours de Hanoï
+## Tours de Hanoï 📄
 
 Les tours de Hanoï sont un vieux problème/jeu de réflexion mathématique. Il consiste à déplacer des disques de diamètres différents d'une tour de « départ » à une tour d'« arrivée » en passant par une tour « intermédiaire », et ceci en un minimum de coups, tout en respectant les règles suivantes :
 1. on ne peut déplacer plus d'un disque à la fois ;
@@ -186,7 +185,21 @@ Réalisez le code nécessaire pour pouvoir réussir ce problème mathématique, 
 4. Intégrer cette fonction dans un algorithme demandant à l'utilisateur de saisir ces choix ;
 5. Gérer les coups impossibles/victoires ;
 
+<br>
+
 ## Jeu des piles (à trier)
+
+Nous faisons ici référence aux jeux mobiles assez populaires ces derniers temps, dans lesquels nous avons plusieurs piles avec des disques superposés et nous avons pour objectif de les triés par couleur.
+
+Les piles ont un nombre restreint d'emplacement et nous ne pouvons mettre un disque que sur une pile vide ou un autre disque de la même couleur. Lors d'un déplacement d'une pile à une autre, tous les disques superposés les uns sur les autres et de la même couleur sont déplacés avec le premier, dans la limite de la capacité de réception de la pile d'arrivée.
+
+Nous pourrons commencer par modéliser 5 piles avec des disques de 4 couleurs différentes. Ces piles auront une capacité maximal de 4 disques.
+
+Conseils d'organisation :
+1. Créer une fonction de création des piles, prennant en paramètres le nombre `n` de piles à créer et la capacité maximale `cap` de ces piles ;
+2. Créer une fonction qui initiera les piles `p` créées en les prennant en paramètre ainsi que le nombre de couleur `ncol` différente. Cette fonction devra retourner les `n` premières piles -1 complétées aléatoirement des disques des `ncol` couleurs (en quantité exacte) et laisser 1 à 2 piles vides ;
+3. Implémenter la ou les fonctions qui prendront une pile de départ et une pile d'arrivée et qui déplaceront l'ensemble des disques possibles, de manière assez similaire à ce qui a été fait pour l'exercice des Tours d'Hanoï ;
+4. Vérifiez les conditions de victoire et de défaite (~ blocage).
 
 ## Calculatrice
 
@@ -213,3 +226,5 @@ Pour cela, je propose de "simplement" décomposer chaque opérations en *express
 La plupart des programmes précédents devraient pouvoir être hébergé sur un bot Discord, sur un site web aussi à condition de les convertir en javascript et de revoir un peu l'affichage.
 
 Il ne reste plus qu'à le faire !
+
+Le codage d'une application web (surtout dans le cas d'un bot Discord) impliqué la maitrise de quelques notions qui peuvent être globalement interprétées à partir de la page de documentation et des exemples données : [https://discordpy.readthedocs.io/en/stable](https://discordpy.readthedocs.io/en/stable)
